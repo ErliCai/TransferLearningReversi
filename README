@@ -1,0 +1,21 @@
+To run the code, please install tqdm, pytorch, scipy, and matplotlib libraries.
+To run the code, please execute main.py from the directory where it is located
+with at least one of the following flags:
+--hyper, --long, --curriculum, --transfer, --figures.
+Each flag will trigger a portion of the experiments as described in the doc,
+which can be accessed by running main.py with the -h flag.
+--figures flag triggers reproduction of the figures.
+
+The results of each experiment are stored in results/{EXPERIMENT} folder, where
+{EXPERIMENT} corresponds to one of the flags above. Note that the code will
+always attempt loading and reporting the results stored in the results directory.
+To force-reproduce all experiments from scratch, remove the results directory.
+Running all experiments will take several days.
+
+Recreating curriculum/meta_20_2.txt, which is the file characterising each
+randomly generated curricula, and especially results/hyper directory, which stores the
+results of the hyperparameter search, can make some of the figures irreproducable
+as they depend on hyperparameters and curricula specifications. Removal of anything else
+should not affect the ability of the code to reproduce the figures (but should
+and will change their content due to randomness in NN weight initialization) so long as
+the results are recreated after removal by running main.py with the appropriate flag.
